@@ -1,4 +1,4 @@
-class Solution {
+class lt_08 {
     public int myAtoi(String s) {
         int i = 0, sign = 1, result = 0;
         s = s.trim();
