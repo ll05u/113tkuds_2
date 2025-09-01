@@ -1,4 +1,4 @@
-class Solution {
+class lt_04 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);
