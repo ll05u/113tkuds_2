@@ -1,4 +1,4 @@
-class Solution {
+class lt_07 {
     public int reverse(int x) {
         int rev = 0;
         while (x != 0) {
