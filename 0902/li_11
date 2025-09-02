@@ -1,0 +1,12 @@
+class lt_11 {
+    public int maxArea(int[] height) {
+        int left = 0, right = height.length - 1, max = 0;
+        while (left < right) {
+            int area = (right - left) * Math.min(height[left], height[right]); // 算面積
+            max = Math.max(max, area); // 更新最大值
+            if (height[left] < height[right]) left++; // 移動較矮邊
+            else right--;
+        }
+        return max;
+    }
+}
