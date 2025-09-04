@@ -1,32 +1,19 @@
-// LeetCode 37: Sudoku Solver
-// 回溯法解數獨
-class lt_37 {
-    public void solveSudoku(char[][] board) {
-        backtrack(board);
-    }
+// LeetCode 36: Valid Sudoku
+// 檢查每列、每行、每個 3x3 宮格是否有重複
+class lt_36 {
+    public boolean isValidSudoku(char[][] board) {
+        boolean[][] row = new boolean[9][9];
+        boolean[][] col = new boolean[9][9];
+        boolean[][] box = new boolean[9][9];
 
-    private boolean backtrack(char[][] board) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (board[i][j] != '.') continue;
-                for (char c = '1'; c <= '9'; c++) {
-                    if (isValid(board, i, j, c)) {
-                        board[i][j] = c;
-                        if (backtrack(board)) return true;
-                        board[i][j] = '.';
-                    }
-                }
-                return false;
+                if (board[i][j] == '.') continue;
+                int num = board[i][j] - '1';
+                int k = (i / 3) * 3 + (j / 3);
+                if (row[i][num] || col[j][num] || box[k][num]) return false;
+                row[i][num] = col[j][num] = box[k][num] = true;
             }
-        }
-        return true;
-    }
-
-    private boolean isValid(char[][] board, int row, int col, char c) {
-        for (int i = 0; i < 9; i++) {
-            if (board[row][i] == c) return false;
-            if (board[i][col] == c) return false;
-            if (board[(row/3)*3 + i/3][(col/3)*3 + i%3] == c) return false;
         }
         return true;
     }
