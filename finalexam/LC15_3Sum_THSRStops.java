@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 public class LC15_ThreeSum_THSRStations {
-// 讀入: n；下一行 n 整數；輸出: 所有和為 0 的不重複三元組，每行 a b c（遞增）
+
 public static void main(String[] args) throws Exception {
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 int n = Integer.parseInt(br.readLine().trim());
@@ -26,3 +26,4 @@ while (L < R && a[R] == vR) R--;
 System.out.print(out.toString());
 }
 }
+
