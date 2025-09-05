@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class LC04_ValidBrackets_Emergency {
+public class LC20_ValidBrackets_Emergency {
 
 public static void main(String[] args) throws Exception {
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,3 +20,4 @@ static boolean match(char a, char b) {
 return (a=='('&&b==')')||(a=='['&&b==']')||(a=='{'&&b=='}');
 }
 }
+
